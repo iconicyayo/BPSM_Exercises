@@ -160,3 +160,58 @@ echo "number of subjects with more than one hsp: ${count}"
 ## count how many times each subject accession appears using cut -f2 blastdata.txt | sort | uniq -c
 ## uniq -c counts consecutive identical lines, so  sort must come before it
 ## the done << (cut.._) part of th script This is called process substitution lets the while loop read the results produced by the other commands while retaining the counter's value afterward.
+
+## question 10: calculate the percentage of mismatches in each hsp
+
+## read each line of the blast results
+while read query subject identity length mismatches gaps qstart qend sstart send evalue bitscore
+do
+    ## check that the alignment length is greater than zero
+    if test "${length}" -gt 0
+    then
+        ## calculate the percentage of mismatches
+        percentage=$((mismatches * 100 / length))
+
+        ## show the subject and its mismatch percentage
+        echo "${subject} ${percentage}%"
+    fi
+done < blastdata.txt
+
+## For every HSP, calculate what proportion of the alignment consists of mismatched amino acids.
+
+##logic: read the alingment length from column 4, read number of mismatches from column 5, divide mismatches by alignment length, multiply that by 100 and display the percentage for each HSP 
+
+## the script i wrote produces  an integer percentage, rounded down.
+
+## question 11: put hsps into groups based on their bit scores
+
+## read each line of the blast results
+while read query subject identity length mismatches gaps qstart qend sstart send evalue bitscore
+do
+    ## remove the decimal part of the bit score for bash comparisons
+    score=${bitscore%.*}
+
+    ## check if the score is below 50
+    if test "${score}" -lt 50
+    then
+        ## put the hsp into the low score group
+        echo "${subject} low" >> low_scores.txt
+
+    ## check if the score is below 200
+    elif test "${score}" -lt 200
+    then
+        ## put the hsp into the medium score group
+        echo "${subject} medium" >> medium_scores.txt
+
+    ## put all remaining hsps into the high score group
+    else
+        echo "${subject} high" >> high_scores.txt
+    fi
+done < blastdata.txt
+
+## count how many hsps are in each group
+wc -l low_scores.txt medium_scores.txt high_scores.txt
+
+## divide the HSPs into a small number of categories based on alignment quality
+## use bit socre frmo column 12 (i.e. in question 7) and sort into low (below 50), medium (5-200), and high (above 200)
+## ${bitscore%.*} removes the decimal part of a score such as 432.5, giving 432 so Bash can compare it as an integer.preserves the chosen group boundaries for non-negative scores.

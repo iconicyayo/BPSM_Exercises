@@ -1620,3 +1620,58 @@ NC_015119.1:1426-2962 gi|336287919|gb|AEI30248.1| 47.222 36 17 1 641 742 136 171
 NC_015119.1:1426-2962 gi|336287881|gb|AEI30229.1| 47.222 36 17 1 641 742 136 171 3.06e-14 26.9
 NC_015119.1:1426-2962 gi|336287897|gb|AEI30237.1| 47.222 36 17 1 641 742 136 171 3.06e-14 26.9
 number of hsps shorter than 100 amino acids: 31
+NC_015119.1:1426-2962	gi|225622197|ref|YP_002725710.1|	61.712	444	169	1	4	1335	12	454	7.36e-147	432
+NC_015119.1:1426-2962	gi|288903410|ref|YP_003434131.1|	61.991	442	167	1	10	1335	14	454	3.08e-146	430
+NC_015119.1:1426-2962	gi|326536058|ref|YP_004300493.1|	62.443	442	165	1	10	1335	14	454	3.29e-146	430
+NC_015119.1:1426-2962	gi|171260186|ref|YP_001795390.1|	61.538	442	169	1	10	1335	15	455	1.09e-145	429
+NC_015119.1:1426-2962	gi|188011119|ref|YP_001905892.1|	61.312	442	170	1	10	1335	14	454	8.19e-146	429
+NC_015119.1:1426-2962	gi|225622184|ref|YP_002725698.1|	61.486	444	170	1	4	1335	12	454	1.06e-145	429
+NC_015119.1:1426-2962	gi|288903312|ref|YP_003434040.1|	61.991	442	167	1	10	1335	14	454	1.18e-145	429
+NC_015119.1:1426-2962	gi|160694986|ref|YP_001552232.1|COX1_21467	61.991	442	167	1	10	1335	14	454	1.97e-145	428
+NC_015119.1:1426-2962	gi|19111755|ref|NP_579952.2|COX1_15956	61.261	444	171	1	4	1335	12	454	2.10e-145	428
+NC_015119.1:1426-2962	gi|288903231|ref|YP_003433879.1|	61.486	444	170	1	4	1335	12	454	2.06e-145	428
+gi|336287921|gb|AEI30249.1| query start: 238 subject start: 2
+gi|336287921|gb|AEI30249.1| query start: 641 subject start: 136
+gi|336287923|gb|AEI30250.1| query start: 238 subject start: 2
+gi|336287923|gb|AEI30250.1| query start: 641 subject start: 136
+gi|336287885|gb|AEI30231.1| query start: 238 subject start: 2
+gi|336287885|gb|AEI30231.1| query start: 641 subject start: 136
+gi|336287889|gb|AEI30233.1| query start: 238 subject start: 2
+gi|336287889|gb|AEI30233.1| query start: 641 subject start: 136
+gi|336287893|gb|AEI30235.1| query start: 238 subject start: 2
+gi|336287893|gb|AEI30235.1| query start: 641 subject start: 136
+gi|336287901|gb|AEI30239.1| query start: 238 subject start: 2
+gi|336287901|gb|AEI30239.1| query start: 641 subject start: 136
+gi|336287909|gb|AEI30243.1| query start: 238 subject start: 2
+gi|336287909|gb|AEI30243.1| query start: 641 subject start: 136
+gi|336287913|gb|AEI30245.1| query start: 238 subject start: 2
+gi|336287913|gb|AEI30245.1| query start: 641 subject start: 136
+gi|336287883|gb|AEI30230.1| query start: 238 subject start: 2
+gi|336287883|gb|AEI30230.1| query start: 641 subject start: 136
+gi|336287887|gb|AEI30232.1| query start: 238 subject start: 2
+gi|336287887|gb|AEI30232.1| query start: 641 subject start: 136
+gi|336287891|gb|AEI30234.1| query start: 238 subject start: 2
+gi|336287891|gb|AEI30234.1| query start: 641 subject start: 136
+gi|336287899|gb|AEI30238.1| query start: 238 subject start: 2
+gi|336287899|gb|AEI30238.1| query start: 641 subject start: 136
+gi|336287903|gb|AEI30240.1| query start: 238 subject start: 2
+gi|336287903|gb|AEI30240.1| query start: 641 subject start: 136
+gi|336287907|gb|AEI30242.1| query start: 238 subject start: 2
+gi|336287907|gb|AEI30242.1| query start: 641 subject start: 136
+gi|336287911|gb|AEI30244.1| query start: 238 subject start: 2
+gi|336287911|gb|AEI30244.1| query start: 641 subject start: 136
+gi|336287905|gb|AEI30241.1| query start: 238 subject start: 2
+gi|336287905|gb|AEI30241.1| query start: 641 subject start: 136
+gi|336287915|gb|AEI30246.1| query start: 238 subject start: 2
+gi|336287915|gb|AEI30246.1| query start: 641 subject start: 136
+gi|336287919|gb|AEI30248.1| query start: 238 subject start: 2
+gi|336287919|gb|AEI30248.1| query start: 641 subject start: 136
+gi|336287881|gb|AEI30229.1| query start: 238 subject start: 2
+gi|336287881|gb|AEI30229.1| query start: 641 subject start: 136
+gi|336287897|gb|AEI30237.1| query start: 238 subject start: 2
+gi|336287897|gb|AEI30237.1| query start: 641 subject start: 136
+gi|336287895|gb|AEI30236.1| query start: 238 subject start: 2
+gi|336287895|gb|AEI30236.1| query start: 641 subject start: 136
+gi|336287917|gb|AEI30247.1| query start: 238 subject start: 2
+gi|336287917|gb|AEI30247.1| query start: 641 subject start: 136
+number of subjects with more than one hsp: 23

@@ -108,4 +108,55 @@ echo "number of hsps shorter than 100 amino acids: ${count}"
 
 ## count=$((count+1)) means take the current value of count, add 1, and save the new value.
 
+## question 7: list the top 10 highest scoring hsps
 
+## sort by bit score from highest to lowest and show the first 10
+sort -k12,12nr blastdata.txt | head -10
+
+### logic: look at coolumn 12, sort the HSPs by bit score (since higher = better), sort numerically rather than alphabetically, put the highest scors first and display only the first ten rows
+
+## sort: sorts the lines, -k12, 12 uses columb 12 as the sort key, n sorts numerically, r reverses the sort order, head -10 displays the first ten lines
+
+## question 8: list start positions where the subject accession contains aei
+
+## read each line of the blast results
+while read query subject identity length mismatches gaps qstart qend sstart send evalue bitscore
+do
+    ## check if the subject accession contains the letters aei
+    if [[ "${subject}" == *AEI* ]]
+    then
+        ## show the subject and both start positions
+        echo "${subject} query start: ${qstart} subject start: ${sstart}"
+    fi
+done < blastdata.txt
+
+## Each subject sequence has an accession identifier, need to find HSPs whose subject accession contains AEI in the indicator. column 7 and column 9 are both potential start positions (where alignment begins in the query and in the subjecT), probs best to display both
+## logic: read subject accession from column 2, check whether the text contains AEI, if it does display query and subject start positions, repeat this for every HSP 
+## use *AEI* as the * means it will check for AEI anywhere in the accesion 
+
+## question 9: count subject sequences with more than one hsp
+
+## start the counter at zero
+count=0
+
+## count how many times each subject accession appears
+while read number subject
+do
+    ## check if the subject has more than one hsp
+    if test "${number}" -gt 1
+    then
+        ## increase the counter by one
+        count=$((count+1))
+    fi
+done < <(cut -f2 blastdata.txt | sort | uniq -c)
+
+## show how many different subjects have more than one hsp
+echo "number of subjects with more than one hsp: ${count}"
+
+## A single subject sequence can have multiple matching regions with the  query, producing multiple HSPs i.e. protein A and B have 3 and 2 HSPs and the answer would be 2 (as two proteins have >1 HSP) rather than 5 
+
+## logic: extract all subject accessions (column 2), sort the accessions so identical ones are together, count how often each acession appears, and then count how many accession appears more than once
+
+## count how many times each subject accession appears using cut -f2 blastdata.txt | sort | uniq -c
+## uniq -c counts consecutive identical lines, so  sort must come before it
+## the done << (cut.._) part of th script This is called process substitution lets the while loop read the results produced by the other commands while retaining the counter's value afterward.
